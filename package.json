@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ethereum/solc-js.git"
+    "url": "git+https://github.com/shyftnetwork/shyft_solc-js.git"
   },
   "keywords": [
     "ethereum",
