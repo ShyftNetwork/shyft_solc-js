@@ -39,3 +39,6 @@ bin
 out
 *.bin
 *.abi
+
+# Deploy key from travis
+shyft_deploy_key
