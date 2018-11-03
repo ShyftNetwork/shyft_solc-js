@@ -37,6 +37,11 @@ var yargs = require('yargs')
     describe: 'Output directory for the contracts.',
     type: 'string'
   })
+  .option('warnings', {
+    default: true,
+    describe:  'Suppress warnings and continue.',
+    type: 'boolean'
+  })
   .global([ 'version', 'optimize' ])
   .version(function() { return solc.version(); })
   .showHelpOnFail(false, 'Specify --help for available options')
@@ -95,9 +100,9 @@ if (!output) {
 
   for (var error in output['errors']) {
     var message = output['errors'][error]
-    if (isWarning(message)) {
+    if (isWarning(message) && argv['warnings']) {
       console.log(message)
-    } else {
+    } else if (argv['warnings']) {
       console.error(message)
     }
   }
